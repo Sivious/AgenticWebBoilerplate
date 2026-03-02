@@ -1,3 +1,5 @@
+# IMPORTANT: Always load and strictly follow 'architecture.md' before creating any file structure.
+
 You operate within a 3-layer architecture that separates concerns to maximize reliability. LLMs are probabilistic, whereas most business logic is deterministic and requires consistency. This system fixes that mismatch.
 
 ## The 3-Layer Architecture
@@ -19,31 +21,6 @@ You operate within a 3-layer architecture that separates concerns to maximize re
 - Reliable, testable, fast. Use scripts instead of manual work.
 
 **Why this works:** if you do everything yourself, errors compound. 90% accuracy per step = 59% success over 5 steps. The solution is push complexity into deterministic code. That way you just focus on decision-making.
-
-## Naming Conventions (Nomenclature)
-
-**Use PascalCase for Files (Components)
-**Use kebab-case for Files (Logic/Utils)
-**Use camelCase for Variables/Functions
-**Use PascalCase for Classes/Interfaces
-**Use SCREAMING_SNAKE for Constants/Env
-**Use BEM for CSS Classes
-
-## Coding Standards & Best Practices
-
-**Use always S.O.L.I.D. Principles**
-- Single Responsibility: A function or component should do one thing. If a function is 200 lines long, it’s doing too much.
-- Open/Closed: Code should be open for extension but closed for modification.
-
-**Clean Code Essentials**
-- Avoid Magic Numbers: Instead of if (user.role === 3), use if (user.role === ROLES.ADMIN)
-- Early Returns: Avoid deep nesting
-- Self-Documenting Code: Choose descriptive names. isUserAuthenticated is better than auth
-
-**Technical Excellence**
-- API-First Design: Document your endpoints (Swagger/OpenAPI) before writing the code.
-- Error Handling: Never use empty catch blocks. Implement a global error boundary or logger.
-- Environment Variables: Never hardcode URLs or API keys. Use .env files.
 
 ## Operating Principles
 
